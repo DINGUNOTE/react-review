@@ -24,3 +24,6 @@ function App() {
 const root = document.getElementById('root');
 ReactDOM.render(<App />, root)
 ```
+
+> 출처<br>
+> [https://nomadcoders.co/react-for-beginners](https://nomadcoders.co/react-for-beginners)

@@ -1,3 +1,6 @@
+### TODO APP을 만들어보며 React 활용 복습하기
+* [https://github.com/DINGUNOTE/react-todo](https://github.com/DINGUNOTE/react-todo)
+
 ### 컴포넌트 최적화
 * React.memo(컴포넌트) - 컴포넌트의 props가 변경되지 않으면 리렌더링 X
 
@@ -27,3 +30,4 @@ ReactDOM.render(<App />, root)
 
 > 출처<br>
 > [https://nomadcoders.co/react-for-beginners](https://nomadcoders.co/react-for-beginners)
+> [https://www.inflearn.com/course/따라하는-리액트](https://www.inflearn.com/course/따라하는-리액트)

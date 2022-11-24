@@ -26,6 +26,21 @@
 
 - React.memo(컴포넌트) - 컴포넌트의 props가 변경되지 않으면 리렌더링 X
 
+### 📌 useLayoutEffect()
+
+- `useEffect()` Hook은 화면에 그려진(Paint) 이후 실행되는 Hook이기 때문에 최초에 데이터가 없는 상태의 경우 화면의 깜빡임 등의 현상이 발생할 수 있다.
+- `useLayoutEffect()` Hook은 화면에 Paint되기 이전에 실행되기 때문에 이러한 현상을 방지할 수 있다.
+
+### 📌 useTransition()
+
+- 동시에 많은 렌더링을 발생시키는 작업일 때 우선 순위가 높은 작업, 낮은 작업을 분리해서 리액트가 최적화시켜주게 할 수 있는 Hook
+- `startTransition()` 내부에 우선 순위가 낮은 작업을 작성하고 외부에 우선 순위가 높은 작업을 작성한다.
+- `loading`이 같이 제공되는데 우선 순위가 높은 작업이 발생 중 로딩 상태를 제어할 수 있다.
+
+### 📌 useDeferredValue()
+
+- 성능에 따라서 덜 중요한 상태를 명시적으로 선언을 해놓고 필요할 때마다 선택적으로 렌더링의 우선 순위를 지정해줄 수 있는 Hook
+
 ### 📌 Props의 Type을 체크할 수 있는 속성 - PropType
 
 ```javascript

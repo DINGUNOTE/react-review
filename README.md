@@ -85,10 +85,21 @@ ReactDOM.render(<App />, root)
 - TDD란? 실제 코드를 작성하기 전에 테스트 코드를 먼저 작성해서 해당 테스트 코드를 통과한 코드로 실제 코드를 작성하는 방법을 테스트 주도 개발(TDD)라고 한다.
 - TDD를 하면 많은 기능을 테스트하기 때문에 소스 코드에 안정감이 부여되고, 이로 인해서 실제 개발을 할 때 디버깅 시간이 줄어들기 때문에 개발의 효율성을 올릴 수 있다.
 
-  ### React Testing Library
+  ### `React Testing Library`
 
   - React 구성 요소 작업을 위한 API를 추가해서 DOM Testing Library 위에 구축된다.
   - DOM Testing Library란 DOM Node를 테스트하기 위한 가벼운 솔루션이다.(리액트 컴포넌트를 테스트하는 가벼운 솔루션)
   - Create React App으로 생성된 프로젝트는 즉시 React Testing Library를 지원한다. 그렇지 않은 경우에는 `npm i -D @testing-library/react` 명령어를 통해 추가할 수 있다.
+  - React Testing Library는 에어비앤비에서 만든 Enzyme이라는 솔루션을 대처하는 솔루션이다.
+  - Enzyme은 구성 요소의 구현 세부 정보를 테스트하는 `구현 주도 테스트(Implementation Driven Test)`로 이루어지는 반면 React Testing Library는 개발자를 리액트 앱 사용자 입장에 두고 행위 `주도 테스트(Behavior Driven Test)`로 이루어진다.
 
-> 출처<br> > [https://nomadcoders.co/react-for-beginners](https://nomadcoders.co/react-for-beginners) > [https://www.inflearn.com/course/따라하는-리액트](https://www.inflearn.com/course/따라하는-리액트)
+  ### `Jest`
+
+  - Facebook에서 만든 테스팅 프레임워크
+  - 최소한의 설정으로 동작하고 Test Case를 만들어서 어플리케이션 코드가 잘 돌아가는지 확인해준다.
+  - `단위(Unit)` 테스트를 위해서 이용한다.
+  - {filename}.`test`.js, {filename}.`spec`.js, `tests` 폴더 내부에 있는 모든 파일로 Test 파일을 찾는다
+
+> 출처<br>
+>
+> [https://nomadcoders.co/react-for-beginners](https://nomadcoders.co/react-for-beginners) <br>[https://www.inflearn.com/course/따라하는-리액트](https://www.inflearn.com/course/따라하는-리액트)

@@ -98,7 +98,13 @@ ReactDOM.render(<App />, root)
   - Facebook에서 만든 테스팅 프레임워크
   - 최소한의 설정으로 동작하고 Test Case를 만들어서 어플리케이션 코드가 잘 돌아가는지 확인해준다.
   - `단위(Unit)` 테스트를 위해서 이용한다.
-  - {filename}.`test`.js, {filename}.`spec`.js, `tests` 폴더 내부에 있는 모든 파일로 Test 파일을 찾는다
+  - {filename}.`test`.js, {filename}.`spec`.js, `tests` 폴더 내부에 있는 모든 파일로 Test 파일을 찾는다.
+  - Jest의 구조
+    <img alt="Jest의 구조" src="https://user-images.githubusercontent.com/89335307/206849161-04f57d88-6355-4521-85ca-24873fdc0f8f.png">
+  - `describe` - 여러 관련 테스트를 그룹화하는 블록
+  - `it(===test)` - 개별 테스트를 수행하는 곳, 각 테스트를 작은 문장처럼 설명한다.
+  - `expect` - expect 함수는 값을 테스트할 때마다 사용된다. 혼자서는 거의 사용되지 않고, matcher와 함께 사용된다.
+  - `matcher` - 다른 방법으로 값을 테스트 하도록 사용한다.
 
 > 출처<br>
 >

@@ -1,6 +1,7 @@
 ### 📌 TODO APP을 만들어보며 React 활용 복습하기
 
-- [Project Repository](https://github.com/DINGUNOTE/react-todo)
+- [React Todo App Repository](https://github.com/DINGUNOTE/react-todo)
+- [React Testing App Repository](https://github.com/DINGUNOTE/react-testing-app)
 
 ### 📌 SPA에서 화면 변경을 일으키는 방법
 
@@ -54,6 +55,22 @@
 ### 📌 useDeferredValue()
 
 - 성능에 따라서 덜 중요한 상태를 명시적으로 선언을 해놓고 필요할 때마다 선택적으로 렌더링의 우선 순위를 지정해줄 수 있는 Hook
+
+### 📌 Automatic batching
+
+- `배칭(batching)`은 업데이트 대상이 되는 상태 값들을 하나의 그룹으로 묶어서 한 번의 리렌더링으로 업데이트가 모두 진행될 수 있게 해주는 것을 의미한다.
+- 한 함수 안에서 setState를 아무리 많이 호출시키더라도 리렌더링은 단 한번만 발생한다.
+  ```javascript
+  function handleClick() {
+    setCount((count) => count + 1); // state를 변경하지만 즉시 리렌더링 되지 않음
+    setFlag((flag) => !flag); // state를 변경하지만 즉시 리렌더링 되지 않음
+    // 함수의 끝에서 리액트가 상태 변경을 한 번에 묶어서 리렌더링을 1회만 발생시킨다.
+  }
+  ```
+  - 함수의 끝에서 업데이트가 되면서 리액트는 마지막에 한 번만 리렌더링한다.
+  - 여러 번 리렌더링 하는 것을 막기 때문에 성능상 좋은 영향을 준다.
+- `batch update`를 사용하면서 불필요한 리렌더링을 줄일 수 있기 때문에 성능적으로 큰 이점을 얻을 수 있다.
+- React18 이전 버전에서도 batch update가 지원됐지만 클릭과 같은 브라우저 이벤트에서만 적용이 가능했고, api 호출에 콜백으로 넣은 함수나 timeouts 함수 등에서는 작동하지 않았다.
 
 ### 📌 Props의 Type을 체크할 수 있는 속성 - PropType
 

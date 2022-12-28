@@ -72,6 +72,26 @@
 - `batch update`를 사용하면서 불필요한 리렌더링을 줄일 수 있기 때문에 성능적으로 큰 이점을 얻을 수 있다.
 - React18 이전 버전에서도 batch update가 지원됐지만 클릭과 같은 브라우저 이벤트에서만 적용이 가능했고, api 호출에 콜백으로 넣은 함수나 timeouts 함수 등에서는 작동하지 않았다.
 
+  > Automatic batching을 사용하지 않으려면?
+
+  - 일반적으로 일괄 처리는 안전하지만 일부 코드는 상태 변경 직후에 DOM에서 무언가 읽는 데 의존할 수도 있다. 이럴 때는 `ReactDom.flushSync()`를 사용해서 일괄 처리를 하지 않을 수 있다.
+
+    ```javascript
+    import { flushSync } from 'react-dom';
+
+    function handleClick() {
+      flushSync(() => {
+        setCount(count + 1);
+      });
+      // React가 바로 DOM 업데이트를 한다. (리렌더링)
+
+      flushSync(() => {
+        setClicked(true);
+      });
+      // React가 바로 DOM 업데이트를 한다. (리렌더링)
+    }
+    ```
+
 ### 📌 Props의 Type을 체크할 수 있는 속성 - PropType
 
 ```javascript
